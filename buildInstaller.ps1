@@ -42,4 +42,8 @@ Write-Host "Installed InnoSetup 5.5.9" -ForegroundColor Green
 $env:PATH += ";C:\Program Files (x86)\Inno Setup 5"
 $env:PATH += ";C:\Program Files\Inno Setup 5"
 
-.\gradlew installer -PtoolChainPath=$comp
+if ($env:APPVEYOR) {
+    .\gradlew installer -PtoolChainPath=$comp -PjenkinsBuild
+} else {
+    .\gradlew installer -PtoolChainPath=$comp
+}
