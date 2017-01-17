@@ -15,6 +15,7 @@ build_script:
 
     Get-ChildItem .\setup\Output\*.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
+deploy:
 - provider: GitHub
   auth_token:
     secure: iRYg7BaJ7cJ9OB18xvaOhmmhSZjN48FU2/2tB6K3qyqY2ubxOJTF2yYowAzksBYo
