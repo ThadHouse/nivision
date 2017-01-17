@@ -222,3 +222,5 @@ gradle-app.setting
 
 #VSCode
 .vscode/
+
+setup/
