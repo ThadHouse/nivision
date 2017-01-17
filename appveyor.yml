@@ -15,8 +15,7 @@ build_script:
 - provider: GitHub
   auth_token:
     secure: iRYg7BaJ7cJ9OB18xvaOhmmhSZjN48FU2/2tB6K3qyqY2ubxOJTF2yYowAzksBYo
-  artifact: /.*\.exe/
-  artifact: /.*\.zip/
+  artifact: /.*\.exe/,/.*\.zip/
   on:
     branch: master
     appveyor_repo_tag: true
