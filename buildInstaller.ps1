@@ -43,7 +43,7 @@ $env:PATH += ";C:\Program Files (x86)\Inno Setup 5"
 $env:PATH += ";C:\Program Files\Inno Setup 5"
 
 if ($env:APPVEYOR) {
-    .\gradlew installer -PtoolChainPath="$comp" -PjenkinsBuild
+    .\gradlew installer windowsZip -PtoolChainPath="$comp" -PjenkinsBuild
 } else {
-    .\gradlew installer -PtoolChainPath="$comp"
+    .\gradlew installer windowsZip -PtoolChainPath="$comp"
 }

@@ -159,6 +159,10 @@ task userStaticZip(type: Zip) {
             into "/cpp/src/$libraryName"
         }
     }
+
+    from(file("${rootDir}/examples")) {
+        into '/examples'
+    }
 }
 
 task cppSources(type: Zip) {
@@ -197,14 +201,14 @@ if (useDriver) {
     }
 }
 
-tasks.whenTaskAdded { task ->
+project(':arm:cpp').tasks.whenTaskAdded { task ->
     def name = task.name.toLowerCase()
     if (name.contains("sharedlibrary") || name.contains("staticlibrary")) {
         userStaticZip.dependsOn task
     }
 }
 
-tasks.whenTaskAdded { task ->
+project(':arm:java').tasks.whenTaskAdded { task ->
     def name = task.name.toLowerCase()
     if (name.contains("sharedlibrary") || name.contains("staticlibrary")) {
         userStaticZip.dependsOn task

@@ -10,6 +10,4 @@ build_script:
 
     Get-ChildItem .\setup\Output\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
-    Get-ChildItem .\release\*.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
-
-    Get-ChildItem .\release\*.jar | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+    Get-ChildItem .\setup\Output\*.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }

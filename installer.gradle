@@ -151,6 +151,15 @@ project(':arm:java').tasks.whenTaskAdded { task ->
     }
 }
 
+task windowsZip(type: Copy) {
+    dependsOn userStaticZip
+    destinationDir = file("${setupDir}/output")
+
+    from (userStaticZip.outputs.files.singleFile) {
+        rename("(.*).zip", "WPINIVisionWrapper_${(WPILibVersion.version).replace(".", "_")}.zip") 
+    }
+}
+
 // https://github.com/syncany/syncany/tree/master/gradle/innosetup
 // Skeleton code found here
 task installer() {
