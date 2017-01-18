@@ -2,9 +2,6 @@ version: '{branch}-{build}'
 pull_requests:
   do_not_increment_build_number: true
 skip_branch_with_pr: true
-branches:
-  only:
-  - master
 build_script:
 - ps: >-
     ./buildInstaller.ps1
@@ -21,5 +18,4 @@ deploy:
     secure: iRYg7BaJ7cJ9OB18xvaOhmmhSZjN48FU2/2tB6K3qyqY2ubxOJTF2yYowAzksBYo
   artifact: /.*\.exe/,/.*\.zip/
   on:
-    branch: master
     appveyor_repo_tag: true
