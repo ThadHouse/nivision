@@ -55,6 +55,7 @@ task clean(type: Delete) {
 
 clean {
     delete releaseDir
+    delete setupDir
 }
 
 task wrapper(type: Wrapper) {

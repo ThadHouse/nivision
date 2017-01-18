@@ -1,4 +1,4 @@
-def setupDir = file("${rootDir}/setup")
+ext.setupDir = file("${rootDir}/setup")
 
 task copyForSetup(type: Copy) {
     description = 'Creates user zip of libraries, with static c++ libs.'
